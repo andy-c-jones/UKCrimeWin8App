@@ -30,9 +30,14 @@ namespace UK_Crime_App
             this.Frame.Navigate(typeof(SplitPage), groupId);
         }
 
-        private void BtnSearchClick(object sender, RoutedEventArgs e)
+        private async void BtnSearchClick(object sender, RoutedEventArgs e)
         {
+            const double longitude = -1.131592;
+            const double latitude = 52.629729;
+
             var client = new RestClient("http://data.police.uk/api/");
+            var request = new RestRequest(string.Format("crimes-street/all-crime?lat={0}&lng={1}", latitude, longitude), Method.GET);
+            var response = await client.ExecuteAsync(request);
         }
 
     }
