@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using RestSharp;
 using UK_Crime_App.DataModel;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -31,6 +32,7 @@ namespace UK_Crime_App
 
         private void BtnSearchClick(object sender, RoutedEventArgs e)
         {
+            var client = new RestClient("http://data.police.uk/api/");
         }
 
     }
