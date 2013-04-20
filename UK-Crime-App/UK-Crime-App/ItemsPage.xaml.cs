@@ -15,6 +15,9 @@ namespace UK_Crime_App
 
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
+            //Load Map
+
+
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             //var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
             //this.DefaultViewModel["Items"] = sampleDataGroups;
@@ -28,7 +31,6 @@ namespace UK_Crime_App
 
         private void BtnSearchClick(object sender, RoutedEventArgs e)
         {
-            //txtPostcode.Text
         }
 
     }
