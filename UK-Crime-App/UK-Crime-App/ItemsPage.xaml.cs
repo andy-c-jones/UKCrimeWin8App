@@ -21,6 +21,8 @@ namespace UK_Crime_App
 
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
+            MyMap.Center = new Location(52.629729, -1.131592);
+            MyMap.ZoomLevel = 7.0;
         }
 
         private async void BtnSearchClick(object sender, RoutedEventArgs e)
@@ -34,7 +36,7 @@ namespace UK_Crime_App
             var test = jsonResponse.Content.Replace("null", "\"\"");
             var responseList = JsonConvert.DeserializeObject<List<Crime>>(test);
 
-            listView1.ItemsSource = responseList;
+            listView.ItemsSource = responseList;
             MyMap.Center = new Location(latitude, longitude);
             MyMap.ZoomLevel = 14.0;
         }

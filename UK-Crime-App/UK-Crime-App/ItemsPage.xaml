@@ -46,7 +46,7 @@
             Grid.ColumnSpan="2"></bm:Map>
 
         <ListView 
-            x:Name="listView1"
+            x:Name="listView"
             Grid.Row="1"
             Grid.RowSpan="2"
             Grid.Column="0"
