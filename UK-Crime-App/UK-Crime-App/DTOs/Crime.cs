@@ -9,6 +9,6 @@
         public string Location_Type { get; set; }
         public string Location_Subtype { get; set; }
         public Location Location { get; set; }
-        public string Outcome_Status { get; set; }
+        public OutcomeStatus Outcome_Status { get; set; }
     }
 }
