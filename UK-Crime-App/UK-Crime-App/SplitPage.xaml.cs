@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UK_Crime_App.Common;
-using UK_Crime_App.DataModel;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -34,30 +33,7 @@ namespace UK_Crime_App
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var group = SampleDataSource.GetGroup((String)navigationParameter);
-            this.DefaultViewModel["Group"] = group;
-            this.DefaultViewModel["Items"] = group.Items;
-
-            if (pageState == null)
-            {
-                this.itemListView.SelectedItem = null;
-                // When this is a new page, select the first item automatically unless logical page
-                // navigation is being used (see the logical page navigation #region below.)
-                if (!this.UsingLogicalPageNavigation() && this.itemsViewSource.View != null)
-                {
-                    this.itemsViewSource.View.MoveCurrentToFirst();
-                }
-            }
-            else
-            {
-                // Restore the previously saved state associated with this page
-                if (pageState.ContainsKey("SelectedItem") && this.itemsViewSource.View != null)
-                {
-                    var selectedItem = SampleDataSource.GetItem((String)pageState["SelectedItem"]);
-                    this.itemsViewSource.View.MoveCurrentTo(selectedItem);
-                }
-            }
+            
         }
 
         /// <summary>
@@ -68,11 +44,7 @@ namespace UK_Crime_App
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-            if (this.itemsViewSource.View != null)
-            {
-                var selectedItem = (SampleDataItem)this.itemsViewSource.View.CurrentItem;
-                if (selectedItem != null) pageState["SelectedItem"] = selectedItem.UniqueId;
-            }
+
         }
 
         #endregion
