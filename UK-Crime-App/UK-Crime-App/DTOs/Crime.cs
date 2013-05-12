@@ -1,6 +1,6 @@
 ﻿namespace UK_Crime_App.DTOs
 {
-    class Crime
+    public class Crime
     {
         public string Id { get; set; }
         public string Context { get; set; }
